@@ -83,7 +83,7 @@ var app = express();
 var hostName = "127.0.0.1";
 var port = 8081;
 
-app.all("*", function (req, res, next) {
+app.all("*", function (req, res, next) {//允许跨域
   res.header(
     "Access-Control-Allow-Origin",
     "file:///Users/xiayufei/Workspace/newegg_sellers/newegg_seller.html"
@@ -107,7 +107,7 @@ app.get("/", function (req, res) {
   ]);
   res.send("请求");
 });
-// app.post("/test", function (req, res) {
+// app.post("/test", function (req, res) {//发送post请求报错？
 //   res.send("请求");
 // });
 app.get("/getComment", function (req, res) {
@@ -120,7 +120,7 @@ app.listen(port, hostName, function () {
   console.log(`服务器运行在http://${hostName}:${port}`);
 });
 
-// //数据库相关
+// //数据库相关（安装失败？）
 // const express = require("express");
 // const mongoose = require("mongoose");
 // const bodyParser = require("body-parser");
